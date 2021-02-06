@@ -7,4 +7,4 @@ The sketch passes in an 'x' value in the range 0 - 2*PI and the model outputs a 
 
 To use your own model update the model.cc file.
 
-![Serial Plotter Screenshot](images/plotter.png)
+![Serial Plotter Screenshot](images/plotter.jpg)
