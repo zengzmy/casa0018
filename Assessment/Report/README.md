@@ -46,16 +46,17 @@ As the picture shows below, I need to change the four parameters to optimize the
 All results are saved in the form of (quantized(int8) because Arduino only accepts models in the form of int8.
 
 1.	Adjust the number of train cycles:
-Control the Learning rate to 0.05, turn off data augmentation and minimum confidence rating to 0.06
+Control the Learning rate to 0.05, turn off data augmentation and minimum confidence rating to 0.06.
 ![Serial Plotter Screenshot](images/1.jpg)
 
 From the above table, we can see that when train cycles are greater than 8, the model has the best accuracy and loss, which are 98.4 and 0.05, respectively.
 
 2.	Adjust Learning rate: 
-Control train cycles to 10, turn off data augmentation, Minimum confidence rating to 0.06
+Control train cycles to 10, turn off data augmentation, Minimum confidence rating to 0.06.
 ![Serial Plotter Screenshot](images/2.jpg)
 
 From the above table, we can see that when the learning rate is equal to 0.005, the model has the best accuracy and loss.
+
 3.	Adjust whether data augmentation: 
 Control the train cycles to 10, Learning rate to 0.05, Minimum confidence rating to 0.06.
 ![Serial Plotter Screenshot](images/3.jpg)
