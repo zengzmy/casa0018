@@ -123,7 +123,7 @@ https://studio.edgeimpulse.com/public/22042/latest/learning/keras-transfer-image
 
 Github:
 (Unsuccessful attempt)
-https://github.com/zengzmy/casa0018/blob/main/Assessment/Projects/Final%20Project/CASA0018_2_3_Cats_v_Dogs.ipynb
+https://github.com/zengzmy/casa0018/blob/main/Assessment/Projects/Final%20Project/Deploy_Cats_v_Dogs_on_Arduino.ipynb
 
 ----
 
