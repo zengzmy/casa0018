@@ -20,6 +20,7 @@ Finally, the Device reminds the driver by displaying LED lights of different col
 ## Data
 The data comes from pictures classified as traffic signs on the Kaggle website. Traffic signs including stop, no-pass, left and right are selected, and the corresponding name labels are attached to them respectively.
 
+
 Figure 1 traffic sign : stop,left,right,no-pass
 
 ![Serial Plotter Screenshot](images/traffic.png)
@@ -49,6 +50,7 @@ As we can see in the figure, in MobileNetV2, there are two types of blocks. One 
 As the picture shows below, I need to change the four parameters to optimize the model, so my experiment will focus on these four parameters. First, adjust the number of train cycles: choose a compromise between accuracy and time epochs. Adjust the Learning rate parameter, which means how fast the neural network learns, if the network overfits quickly, then lower the learning rate. Then, select While data augmentation, which means, randomly transform data during training. And allows us to run more training cycles Without overfitting, which can improve accuracy. Finally, adjust the Minimum confidence rating parameter, which is the threshold score for trusting the neural network. If the confidence rating is below this value, the sample will be tagged as 'uncertain'.
 
 Figure 4 : Parameters
+
 ![Serial Plotter Screenshot](images/parameter.png)
 
 ## Results and Observations
@@ -98,6 +100,8 @@ All in all, in the experiment, I conducted repeated training on the transfer lea
 Figure 5: Running result in Arduino
 
 ![Serial Plotter Screenshot](images/arduino.png)
+
+As showing in the terminal, the model is 715912 bytes and can deploy in nearly 28 seconds
 
 Figure 6 : The test result
 
