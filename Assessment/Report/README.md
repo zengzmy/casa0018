@@ -31,17 +31,17 @@ To simulate the real-time situation on the Arduino more accurately, we modified 
 ## Model
 For classification and recognition, this article first tries to use Sequential based on a convolutional neural network to train pictures, but it takes a lot of pictures to train, which is time-consuming and laborious. Although I Enforce integer only quantization to reduce the model size, the final model is still too large to be loaded by Arduino. Later, this research introduced a traffic sign recognition and classification method based on transmission learning, using a lightweight training model mobilenetv2, which significantly reduces the amount of training data and reduces computational consumption, so it is very suitable for Mobile Devices.
 
-figure 2 : transfer learning
+Figure 2 : transfer learning
 
 ![Serial Plotter Screenshot](images/transferlearning.png)
 
-source: https://bouzouitina-hamdi.medium.com/transfer-learning-with-keras-using-densenet121-fffc6bb0c233
+Source: https://bouzouitina-hamdi.medium.com/transfer-learning-with-keras-using-densenet121-fffc6bb0c233
 
-figure 3 : MobileNetV2 Model
+Figure 3 : MobileNetV2 Model
 
 ![Serial Plotter Screenshot](images/MobileNetV2.png)
 
-source: Mark Sandler
+Source: Mark Sandler
 
 As we can see in the figure, in MobileNetV2, there are two types of blocks. One is a residual block with a stride of 1, and the other is a block with a stride of 2 to reduce the size. Both types of blocks have 3 layers. The first layer is 1×1 convolution with ReLU6. The second layer is deep convolution. The third layer is another 1×1 convolution, but without any nonlinearity. It is said that if ReLU is used again, the deep network only has the function of a linear classifier in the non-zero volume part of the output domain (Sandler et al., 2018). 
 
