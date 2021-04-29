@@ -20,6 +20,8 @@ Finally, the Device reminds the driver by displaying LED lights of different col
 ## Data
 The data comes from pictures classified as traffic signs on the Kaggle website. Traffic signs including stop, no-pass, left and right are selected, and the corresponding name labels are attached to them respectively.
 
+Figure 1 traffic sign : stop,left,right,no-pass
+
 ![Serial Plotter Screenshot](images/traffic.png)
 
 As set in the edge impulse, it splits the data 80/20 between training and testing data. Uses the hash of the file to determine in which category it's placed, so the same files always end up in the same category.
@@ -29,10 +31,13 @@ To simulate the real-time situation on the Arduino more accurately, we modified 
 ## Model
 For classification and recognition, this article first tries to use Sequential based on a convolutional neural network to train pictures, but it takes a lot of pictures to train, which is time-consuming and laborious. Although I Enforce integer only quantization to reduce the model size, the final model is still too large to be loaded by Arduino. Later, this research introduced a traffic sign recognition and classification method based on transmission learning, using a lightweight training model mobilenetv2, which significantly reduces the amount of training data and reduces computational consumption, so it is very suitable for Mobile Devices.
 
+figure 2 : transfer learning
+
 ![Serial Plotter Screenshot](images/transferlearning.png)
 
 source: https://bouzouitina-hamdi.medium.com/transfer-learning-with-keras-using-densenet121-fffc6bb0c233
 
+figure 3 : MobileNetV2 Model
 ![Serial Plotter Screenshot](images/MobileNetV2.png)
 
 As we can see in the figure, in MobileNetV2, there are two types of blocks. One is a residual block with a stride of 1, and the other is a block with a stride of 2 to reduce the size. Both types of blocks have 3 layers. The first layer is 1×1 convolution with ReLU6. The second layer is deep convolution. The third layer is another 1×1 convolution, but without any nonlinearity. It is said that if ReLU is used again, the deep network only has the function of a linear classifier in the non-zero volume part of the output domain (Sandler et al., 2018). 
@@ -40,6 +45,7 @@ As we can see in the figure, in MobileNetV2, there are two types of blocks. One 
 ## Experiments
 As the picture shows below, I need to change the four parameters to optimize the model, so my experiment will focus on these four parameters. First, adjust the number of train cycles: choose a compromise between accuracy and time epochs. Adjust the Learning rate parameter, which means how fast the neural network learns, if the network overfits quickly, then lower the learning rate. Then, select While data augmentation, which means, randomly transform data during training. And allows us to run more training cycles Without overfitting, which can improve accuracy. Finally, adjust the Minimum confidence rating parameter, which is the threshold score for trusting the neural network. If the confidence rating is below this value, the sample will be tagged as 'uncertain'.
 
+Figure 4 : Parameters
 ![Serial Plotter Screenshot](images/parameter.png)
 
 ## Results and Observations
@@ -48,6 +54,8 @@ All results are saved in the form of (quantized(int8) because Arduino only accep
 1.	Adjust the number of train cycles:
 Control the Learning rate to 0.05, turn off data augmentation and minimum confidence rating to 0.06.
 
+Table 1 : Result of adjusting the number of train cycles
+
 ![Serial Plotter Screenshot](images/1.jpg)
 
 From the above table, we can see that when train cycles are greater than 8, the model has the best accuracy and loss, which are 98.4 and 0.05, respectively.
@@ -55,12 +63,15 @@ From the above table, we can see that when train cycles are greater than 8, the 
 2.	Adjust Learning rate: 
 Control train cycles to 10, turn off data augmentation, Minimum confidence rating to 0.06.
 
+Table 2 : Result of adjusting Learning rate
 ![Serial Plotter Screenshot](images/2.jpg)
 
 From the above table, we can see that when the learning rate is equal to 0.005, the model has the best accuracy and loss.
 
 3.	Adjust whether data augmentation: 
 Control the train cycles to 10, Learning rate to 0.05, Minimum confidence rating to 0.06.
+
+Table 3 : Result of adjusting data augmentation
 
 ![Serial Plotter Screenshot](images/3.jpg)
 
@@ -69,6 +80,8 @@ In other words, the intensifier trains the network to rotate and translate traff
 
 4.	Adjust minimum confidence rating:
 Control the train cycles to 8, Learning rate to 0.05, and minimum confidence rating to 0.06.
+
+Table 3 : Result of adjusting minimum confidence rating
 
 ![Serial Plotter Screenshot](images/4.jpg)
 
