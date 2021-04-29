@@ -75,7 +75,7 @@ It can be seen from the results of the above table that the confidence rating ha
 All in all, in the experiment, I conducted repeated training on the transfer learning-based model, and fine-tuned the parameters at different learning rates, and observed good reliability and repeatability based on statistical analysis. The results show that the transfer learning model can achieve a high level of recognition performance in traffic sign recognition. At a learning rate of 0.005, the recognition accuracy is as high as 98.6%, the loss degree reaches 0.05, and the RAM usage is also controlled at 585.1k.
 
 The picture below shows that it's successfully running.
-![Serial Plotter Screenshot](images/ardino.png)
+![Serial Plotter Screenshot](images/arduino.png)
 
 The test result is as below.
 ![Serial Plotter Screenshot](images/test.png)
