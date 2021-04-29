@@ -1,4 +1,4 @@
-# How does Transfer learning deploy the model for training traffic sign pictures on Arduino?
+# How does transfer learning deploy the model for training traffic sign pictures on Arduino?
 
 Mengyun Zeng
 
@@ -9,7 +9,7 @@ This project uses edge impulse to simulate the training of the traffic sign reco
 
 
 ## Research Question
-How does Transfer learning deploy the model for training traffic sign pictures on Arduino, and what is the effect?
+How does transfer learning deploy the model for training traffic sign pictures on Arduino, and what is the effect?
 
 ## Application Overview
 The first is data collection. This article collects a large number of pictures of various traffic signs from the Kaggle website and divides them into a training set and a test set. Then convert the picture into a format that can be used in this practice.
@@ -111,7 +111,9 @@ Finally, through edge impulse, this experiment deployed the model to the Arduino
 
 ## Bibliography
 Elgendi, M., Nasir, M. U., Tang, Q., Smith, D., Grenier, J. P., Batte, C., Spieler, B., Leslie, W. D., Menon, C., Fletcher, R. R., Howard, N., Ward, R., Parker, W. and Nicolaou, S. (2021). ‘The Effectiveness of Image Augmentation in Deep Learning Networks for Detecting COVID-19: A Geometric Transformation Perspective’. Frontiers in Medicine, 8 (March), pp. 1–12. doi: 10.3389/fmed.2021.629134.
+
 Sandler, M., Howard, A., Zhu, M., Zhmoginov, A. and Chen, L. C. (2018). ‘MobileNetV2: Inverted residuals and linear bottlenecks’. arXiv, pp. 4510–4520.
+
 Stallkamp, J., Schlipsing, M., Salmen, J. and Igel, C. (2012). ‘Man vs. computer: Benchmarking machine learning algorithms for traffic sign recognition’. Neural Networks. Elsevier Ltd, 32, pp. 323–332. doi: 10.1016/j.neunet.2012.02.016.
 
 ## Link of edge impulse
