@@ -48,15 +48,18 @@ All results are saved in the form of (quantized(int8) because Arduino only accep
 1.	Adjust the number of train cycles:
 Control the Learning rate to 0.05, turn off data augmentation and minimum confidence rating to 0.06
 ![Serial Plotter Screenshot](images/1.jpg)
+
 From the above table, we can see that when train cycles are greater than 8, the model has the best accuracy and loss, which are 98.4 and 0.05, respectively.
 
 2.	Adjust Learning rate: 
 Control train cycles to 10, turn off data augmentation, Minimum confidence rating to 0.06
 ![Serial Plotter Screenshot](images/2.jpg)
+
 From the above table, we can see that when the learning rate is equal to 0.005, the model has the best accuracy and loss.
 3.	Adjust whether data augmentation: 
 Control the train cycles to 10, Learning rate to 0.05, Minimum confidence rating to 0.06.
 ![Serial Plotter Screenshot](images/3.jpg)
+
 According to the above table, compared with no enhancement method, the verification accuracy of the enhancement method is lower.
 In other words, the intensifier trains the network to rotate and translate traffic sign images, and these images do not exist in the real world or are conflicting. This means that geometric enhancement does not provide any additional benefits, and can play a role in reducing the verification accuracy, as shown here.(Elgendi et al., 2021)
 
@@ -64,13 +67,16 @@ In other words, the intensifier trains the network to rotate and translate traff
 Control the train cycles to 8, Learning rate to 0.05, and minimum confidence rating to 0.06.
 
 ![Serial Plotter Screenshot](images/4.jpg)
+
 It can be seen from the results of the above table that the confidence rating has no improvement effect on the model of this experiment, and the accuracy and loss have been maintained at 98.4 and 0.05, respectively.
 
 ![Serial Plotter Screenshot](images/deployment.png)
+
 All in all, in the experiment, I conducted repeated training on the transfer learning-based model, and fine-tuned the parameters at different learning rates, and observed good reliability and repeatability based on statistical analysis. The results show that the transfer learning model can achieve a high level of recognition performance in traffic sign recognition. At a learning rate of 0.005, the recognition accuracy is as high as 98.6%, the loss degree reaches 0.05, and the RAM usage is also controlled at 585.1k.
 
 The picture below shows that it's successfully running.
 ![Serial Plotter Screenshot](images/ardino.png)
+
 The test result is as below.
 ![Serial Plotter Screenshot](images/test.png)
 
