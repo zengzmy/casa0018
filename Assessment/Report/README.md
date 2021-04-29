@@ -30,6 +30,7 @@ To simulate the real-time situation on the Arduino more accurately, we modified 
 For classification and recognition, this article first tries to use Sequential based on a convolutional neural network to train pictures, but it takes a lot of pictures to train, which is time-consuming and laborious. Although I Enforce integer only quantization to reduce the model size, the final model is still too large to be loaded by Arduino. Later, this research introduced a traffic sign recognition and classification method based on transmission learning, using a lightweight training model mobilenetv2, which significantly reduces the amount of training data and reduces computational consumption, so it is very suitable for Mobile Devices.
 
 ![Serial Plotter Screenshot](images/transferlearning.png)
+
 source: https://bouzouitina-hamdi.medium.com/transfer-learning-with-keras-using-densenet121-fffc6bb0c233
 
 ![Serial Plotter Screenshot](images/MobileNetV2.png)
