@@ -38,7 +38,10 @@ figure 2 : transfer learning
 source: https://bouzouitina-hamdi.medium.com/transfer-learning-with-keras-using-densenet121-fffc6bb0c233
 
 figure 3 : MobileNetV2 Model
+
 ![Serial Plotter Screenshot](images/MobileNetV2.png)
+
+source: Mark Sandler
 
 As we can see in the figure, in MobileNetV2, there are two types of blocks. One is a residual block with a stride of 1, and the other is a block with a stride of 2 to reduce the size. Both types of blocks have 3 layers. The first layer is 1×1 convolution with ReLU6. The second layer is deep convolution. The third layer is another 1×1 convolution, but without any nonlinearity. It is said that if ReLU is used again, the deep network only has the function of a linear classifier in the non-zero volume part of the output domain (Sandler et al., 2018). 
 
