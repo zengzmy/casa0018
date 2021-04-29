@@ -116,7 +116,7 @@ Sandler, M., Howard, A., Zhu, M., Zhmoginov, A. and Chen, L. C. (2018). ‘Mobil
 
 Stallkamp, J., Schlipsing, M., Salmen, J. and Igel, C. (2012). ‘Man vs. computer: Benchmarking machine learning algorithms for traffic sign recognition’. Neural Networks. Elsevier Ltd, 32, pp. 323–332. doi: 10.1016/j.neunet.2012.02.016.
 
-## Link of 
+## Link of Project
 
 Edge impulse:
 https://studio.edgeimpulse.com/public/22042/latest/learning/keras-transfer-image/5
@@ -124,6 +124,7 @@ https://studio.edgeimpulse.com/public/22042/latest/learning/keras-transfer-image
 Github:
 (Unsuccessful attempt)
 https://github.com/zengzmy/casa0018/blob/main/Assessment/Projects/Final%20Project/CASA0018_2_3_Cats_v_Dogs.ipynb
+
 ----
 
 ## Declaration of Authorship
